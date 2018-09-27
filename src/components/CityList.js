@@ -4,7 +4,6 @@ class CityList extends Component {
   render() {
     return (
       <div>
-        <h1>Our list of cities</h1>
         <City />
       </div>
     );

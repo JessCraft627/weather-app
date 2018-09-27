@@ -6,3 +6,49 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.home-logo {
+  margin: 8px 12px;
+  width:50px;
+}
+
+.signout-button {
+  float:right;
+  width: 6%;
+  background-color: #008CBA;
+  color: white;
+  padding: 12px 12px;
+  margin: 8px 10px;
+  border: 2px solid #008CBA;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-form {
+  text-align: center;
+  margin-top: 60px;
+}
+input[type=text], select {
+    width: 25%;
+    padding: 22px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #008CBA;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 8%;
+    background-color: #008CBA;
+    color: white;
+    padding: 18px 20px;
+    margin: 8px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}

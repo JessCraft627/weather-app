@@ -7,11 +7,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h4>A fantastic weather app</h4>
         <Navbar />
         <Search />
         <CityContainer />
-
       </div>
     );
   }
