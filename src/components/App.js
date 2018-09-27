@@ -1,4 +1,24 @@
 import React, { Component } from 'react';
+import Search from './Search'
+import CityContainer from './CityContainer'
+import Navbar from './Navbar'
+
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <h4>A fantastic weather app</h4>
+        <Navbar />
+        <Search />
+        <CityContainer />
+
+      </div>
+    );
+  }
+}
+
+export default App;
+
 
 /*   Responsibility
     1.  Is the container for our overall Weather App
@@ -7,17 +27,3 @@ import React, { Component } from 'react';
     4. sign in?
     5. will fetch data for search
     */
-
-
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <h1>A fantastic weather app</h1>
-
-      </div>
-    );
-  }
-}
-
-export default App;

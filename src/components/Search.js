@@ -1,4 +1,17 @@
+import React, { Component } from 'react';
 
+class Search extends Component {
+  render(){
+    return(
+      <div>
+        <h2> Search bar goes here </h2>
+      </div>
+    )
+  }
+
+}
+
+export default Search;
 
 {/*   Responsibility
     1.  a class component

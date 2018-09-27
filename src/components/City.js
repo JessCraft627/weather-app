@@ -4,7 +4,7 @@ class City extends Component {
   render(){
     return(
       <div>
-        <h2> Individual Show page </h2>
+        <h2> Individual Show page for the city</h2>
       </div>
     )
   }
