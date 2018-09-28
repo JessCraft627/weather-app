@@ -8,8 +8,7 @@ const USER_API_URL = 'http://localhost:3000/api/v1/users'
 class App extends Component {
 
   handleCityWeather = (city) => {
-    let cityURL = city.split(' ').join('%20')
-   fetch(`//api.openweathermap.org/data/2.5/weather?q=${cityURL}&units=Imperial&APPID=773d0a7cd6399fcc9e0901473a2796b0`)
+   fetch(`//api.openweathermap.org/data/2.5/weather?q=${city}&units=Imperial&APPID=773d0a7cd6399fcc9e0901473a2796b0`)
    .then(r => r.json())
    .then(data => this.setState({cities:[data]}))
   }
@@ -25,16 +24,10 @@ class App extends Component {
     }
   }
 
-
-  componentDidMount(){
-    fetch("//api.openweathermap.org/data/2.5/weather?q=wichita&units=Imperial&APPID=773d0a7cd6399fcc9e0901473a2796b0")
-    .then(r => r.json())
-    .then(data => this.setState({cities:[data]}, () => {console.log(this.state.cities)}))
-
-    fetch(USER_API_URL)
-    .then(r=>r.json())
-    .then(users=>this.setState({ currentUser: users[users.length-1] }))
-  }
+  //   fetch(USER_API_URL)
+  //   .then(r=>r.json())
+  //   .then(users=>this.setState({ currentUser: users[users.length-1] }))
+  // }
 
   handleChange = (e) => {
     this.setState({search: e.target.value});
@@ -43,6 +36,8 @@ class App extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
+    let city = this.state.search
+    this.handleCityWeather(city)
     console.log("works")
   }
 
