@@ -2,15 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 const BASE_URL = 'http://localhost:3000/api/v1/users'
 
-// const link = {
-//   width: '50px',
-//   padding: '12px',
-//   margin: '0 200px 0',
-//   background: 'black',
-//   textDecoration: 'none',
-//   color: 'white'
-// }
-
 class Login extends Component {
   state = {
     input: '',
