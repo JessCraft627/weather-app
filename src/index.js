@@ -15,8 +15,8 @@ ReactDOM.render((
   <Router>
     <React.Fragment>
        <Route exact path="/" component={Login} />
-       <Route path="/weather" component={App} />
-       <Route path="/city" component={City} />
+       <Route exact path="/weather" component={App} />
+       <Route exact path="/city" component={City} />
     </React.Fragment>
   </Router>),
   document.getElementById('root')

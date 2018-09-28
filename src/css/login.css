@@ -1,1 +1,33 @@
 /*  This will hold our login page css  */
+div {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  align-content: center;
+}
+
+.login-input {
+  width: 25%;
+  padding: 22px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #008CBA;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.submit-button {
+  width: 8%;
+  background-color: #008CBA;
+  color: white;
+  padding: 18px 20px;
+  margin: 8px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
