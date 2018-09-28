@@ -3,17 +3,41 @@ import Search from './Search'
 import CityContainer from './CityContainer'
 import Navbar from './Navbar'
 
+
 class App extends Component {
-  state = {
-    isLoggedIn: false
+
+  constructor(props) {
+  super(props);
+  this.state = {
+    cities: [],
+    search: ''
+  }
+}
+
+  componentDidMount(){
+    fetch("//api.openweathermap.org/data/2.5/weather?q=wichita&units=Imperial&APPID=773d0a7cd6399fcc9e0901473a2796b0")
+    .then(r => r.json())
+    .then(data => this.setState({cities:[data]}, () => {console.log(this.state.cities)}))
   }
 
+  handleChange = (e) => {
+     this.setState({search: e.target.value});
+   }
+
+   handleSubmit = (e) => {
+     e.preventDefault()
+     console.log("works")
+   }
+
+
+
   render() {
+
     return (
       <div>
         <Navbar />
-        <Search />
-        <CityContainer />
+        <Search handleChange={this.handleChange} search={this.state.search} handleSubmit={this.handleSubmit}/>
+        <CityContainer cityData={this.state.cities}/>
       </div>
     );
   }

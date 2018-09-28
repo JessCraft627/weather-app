@@ -7,18 +7,40 @@ body {
   font-family: sans-serif;
 }
 
-.home-logo {
-  margin: 8px 12px;
-  width:50px;
+.nav {
+  text-align: center;
 }
+.city-list {
+  padding: 12px;
+text-align: center;
+}
+
+h3 {
+  padding: 0;
+  margin: 3px;
+}
+.cf {
+       width: 130px;
+       height: 130px;
+       margin: 20px auto;
+      transition: 0.7s;
+      display: inline-block;
+       background: url('sunny.png') no-repeat;
+   }
+
+ .cf:hover {
+   transform: rotate(5deg);
+   background: url('night.png') no-repeat;
+ }
+
 
 .signout-button {
   float:right;
   width: 6%;
   background-color: #008CBA;
   color: white;
-  padding: 12px 12px;
-  margin: 8px 10px;
+  padding: 12px 16px;
+  margin: 18px 10px;
   border: 2px solid #008CBA;
   border-radius: 4px;
   cursor: pointer;
@@ -28,6 +50,7 @@ body {
   text-align: center;
   margin-top: 60px;
 }
+
 input[type=text], select {
     width: 25%;
     padding: 22px 20px;
@@ -42,7 +65,7 @@ input[type=submit] {
     width: 8%;
     background-color: #008CBA;
     color: white;
-    padding: 18px 20px;
+    padding: 22px 20px;
     margin: 8px 10px;
     border: none;
     border-radius: 4px;
@@ -50,5 +73,5 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-    background-color: #45a049;
+    background-color: #ffd025;
 }

@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
 import City from './City'
-class CityList extends Component {
-  render() {
-    return (
-      <div>
-        <City />
-      </div>
-    );
-  }
+
+const CityList = (props) => {
+   console.log(props)
+  return (
+    <div className="city-list">
+        <h3 className="name"> City: {props.name}</h3>
+        <h3 className="temp"> Temp: {props.temp}</h3>
+        <h3 className="desc"> Description: {props.descr}</h3>
+        <h3 className="icon"> Icon: <img src={`http://openweathermap.org/img/w/${props.icon}.png`} /> </h3>
+    </div>
+  )
 }
 
-export default CityList;
-
-{/*   Responsibility
-    1.  functional component
-    2. will display the cities info like:
-    3.
-    */}
+export default CityList
