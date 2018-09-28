@@ -4,7 +4,17 @@ import CityContainer from './CityContainer'
 import Navbar from './Navbar'
 
 
+
 class App extends Component {
+
+  handleCityWeather = (city) => {
+    let cityURL = city.split(' ').join('%20')
+   fetch(`//api.openweathermap.org/data/2.5/weather?q=${cityURL}&units=Imperial&APPID=773d0a7cd6399fcc9e0901473a2796b0`)
+   .then(r => r.json())
+   .then(data => this.setState({cities:[data]}))
+  }
+
+      // this.setState((prevState, cities) => ({cities: prevState.cities + cities.[data]})
 
   constructor(props) {
   super(props);
@@ -14,19 +24,15 @@ class App extends Component {
   }
 }
 
-  componentDidMount(){
-    fetch("//api.openweathermap.org/data/2.5/weather?q=wichita&units=Imperial&APPID=773d0a7cd6399fcc9e0901473a2796b0")
-    .then(r => r.json())
-    .then(data => this.setState({cities:[data]}, () => {console.log(this.state.cities)}))
-  }
-
   handleChange = (e) => {
      this.setState({search: e.target.value});
    }
 
    handleSubmit = (e) => {
      e.preventDefault()
-     console.log("works")
+     let city = this.state.search
+     console.log(city)
+     this.handleCityWeather(city)
    }
 
 
@@ -44,12 +50,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-/*   Responsibility
-    1.  Is the container for our overall Weather App
-    2. Will hold the state of the search results to pass down to weather container
-    3. Has 3 children - Navbar, search,  weather container.
-    4. sign in?
-    5. will fetch data for search
-    */

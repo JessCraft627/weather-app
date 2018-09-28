@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import City from './City'
 
 const CityList = (props) => {
-   console.log(props)
+   // console.log(props)
   return (
     <div className="city-list">
         <h3 className="name"> City: {props.name}</h3>
