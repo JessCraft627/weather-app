@@ -2496,7 +2496,10 @@ Example of API call
 
 api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=
 api.openweathermap.org/data/2.5/weather?q=New York&units=Imperial&APPID=
+^^^^
 api.openweathermap.org/data/2.5/weather?zip=11215&units=Imperial&APPID=
+^
+
 
 API documentation
 
