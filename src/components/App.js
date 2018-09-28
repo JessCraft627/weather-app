@@ -4,6 +4,10 @@ import CityContainer from './CityContainer'
 import Navbar from './Navbar'
 
 class App extends Component {
+  state = {
+    isLoggedIn: false
+  }
+
   render() {
     return (
       <div>
