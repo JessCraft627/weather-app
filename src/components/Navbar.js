@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import home from '../css/sunny.png'
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 
 class Navbar extends Component {
   render(){
     return(
-      <div>
-      <NavLink
-        to="/weather"> <img className="home-logo" src={home} alt={"logo"}/></NavLink>
+      <div className="nav">
+        <div className="cf"> </div>
         <NavLink
           to="/"> <button className="signout-button"> Sign out </button></NavLink>
       </div>
