@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Search from './Search'
 import CityContainer from './CityContainer'
 import Navbar from './Navbar'
-const USER_API_URL = 'http://localhost:3000/api/v1/users'
+const BASE_URL = 'http://localhost:3000/api/v1'
 
 
 class App extends Component {
@@ -19,50 +19,47 @@ class App extends Component {
     super(props);
     this.state = {
       cities: [],
-      search: '',
+      searchTerm: '',
       currentUser: ''
     }
   }
 
-  //   fetch(USER_API_URL)
-  //   .then(r=>r.json())
-  //   .then(users=>this.setState({ currentUser: users[users.length-1] }))
-  // }
+  componentDidMount = () => {
+    fetch(`${BASE_URL}/users`)
+    .then(r=>r.json())
+    .then(users=>this.setState({ currentUser: users[users.length-1] },()=>console.log(this.state.currentUser)))
+  }
 
   handleChange = (e) => {
-    this.setState({search: e.target.value});
+    this.setState({searchTerm: e.target.value});
   }
-
 
   handleSubmit = (e) => {
-    e.preventDefault()
-    let city = this.state.search
-    this.handleCityWeather(city)
-    console.log("works")
+    e.preventDefault();
+    let city = this.state.searchTerm;
+    this.handleCityWeather(city);
+    this.persistCitiesToBackend(city);
   }
 
-  // getCurrentUser = () => {
-  //
-  // }
-  //
-  // persistCitiesToBackend = (e) => {
-  //   fetch(USER_API_URL, {
-  //     headers: {
-  //       'Accept': 'application/json',
-  //       'Content-Type': 'application/json'
-  //     },
-  //     method: 'POST',
-  //     body: JSON.stringify({
-  //       name: this.state.input
-  //     })
-  //   })
-  // }
+  persistCitiesToBackend = () => {
+    fetch(`${BASE_URL}/cities`, {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      method: 'POST',
+      body: JSON.stringify({
+        name: 'Miami',
+        user_id: 25
+      })
+    });
+  }
 
   render() {
     return (
       <div>
         <Navbar />
-        <Search handleChange={this.handleChange} search={this.state.search} handleSubmit={this.handleSubmit} persistCitiesToBackend={this.persistCitiesToBackend}/>
+        <Search handleChange={this.handleChange} searchTerm={this.state.searchTerm} handleSubmit={this.handleSubmit} persistCitiesToBackend={this.persistCitiesToBackend}/>
         <CityContainer cityData={this.state.cities}/>
       </div>
     );
