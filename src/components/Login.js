@@ -35,14 +35,14 @@ class Login extends Component {
   render() {
     return (
       <div>
-        <h1>Create Your Profile</h1>
+        <h1 className="create-profile">Create Your Profile</h1>
         { this.state.displayError ? <h4>The name field can't be blank</h4> : null }
-          <form>
+          <form className="login-form">
             <input
               className="login-input"
               onChange={this.handleInputChange}
               value={this.state.input}
-              placeholder="Your name goes here">
+              placeholder="Name">
             </input>
             <Link
               className="submit-button"

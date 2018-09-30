@@ -2,10 +2,12 @@
 div {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Montserrat', sans-serif;
   align-content: center;
 }
-
+.login-form {
+  text-align: center;
+}
 .login-input {
   width: 25%;
   padding: 22px 20px;
@@ -16,6 +18,10 @@ div {
   box-sizing: border-box;
 }
 
+.create-profile {
+  text-align: center;
+  font-weight: lighter;
+}
 .submit-button {
   width: 8%;
   background-color: #008CBA;
@@ -29,5 +35,5 @@ div {
 }
 
 .submit-button:hover {
-  background-color: #45a049;
+  background-color: #ffd025;
 }

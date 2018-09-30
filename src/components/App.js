@@ -7,22 +7,21 @@ const USER_API_URL = 'http://localhost:3000/api/v1/users'
 
 class App extends Component {
 
-  handleCityWeather = (city) => {
-   fetch(`//api.openweathermap.org/data/2.5/weather?q=${city}&units=Imperial&APPID=773d0a7cd6399fcc9e0901473a2796b0`)
-   .then(r => r.json())
-   .then(data => this.setState({cities:[data]}))
-  }
-
-      // this.setState((prevState, cities) => ({cities: prevState.cities + cities.[data]})
-
   constructor(props) {
     super(props);
     this.state = {
       cities: [],
       search: '',
-      currentUser: ''
+      currentUser: '',
+      loading:false
     }
   }
+
+  handleCityWeather = (city) => {
+   fetch(`//api.openweathermap.org/data/2.5/weather?q=${city}&units=Imperial&APPID=773d0a7cd6399fcc9e0901473a2796b0`)
+   .then(r => r.json())
+   .then(data => this.setState({cities:[...this.state.cities, data]},()=>console.log(this.state.cities)))
+ }
 
   //   fetch(USER_API_URL)
   //   .then(r=>r.json())
@@ -38,7 +37,9 @@ class App extends Component {
     e.preventDefault()
     let city = this.state.search
     this.handleCityWeather(city)
+
     console.log("works")
+      this.setState({search:' '});
   }
 
   // getCurrentUser = () => {
@@ -63,7 +64,7 @@ class App extends Component {
       <div>
         <Navbar />
         <Search handleChange={this.handleChange} search={this.state.search} handleSubmit={this.handleSubmit} persistCitiesToBackend={this.persistCitiesToBackend}/>
-        <CityContainer cityData={this.state.cities}/>
+        <CityContainer loading={this.state.loading} cityData={this.state.cities}/>
       </div>
     );
   }
