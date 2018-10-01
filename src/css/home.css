@@ -21,6 +21,9 @@ body {
   margin-bottom: -10px;
 }
 
+a {
+   text-decoration: none;
+} 
 .desc {
 text-align: left;
 font-size: 16px;
