@@ -13,18 +13,19 @@ body {
 
 .weather-icon {
   margin-bottom: -20px;
-  padding-left: 50px;
+
 }
 .name {
-  display: inline;
-  font-size: 28px;
+  display: block;
+  font-size: 38px;
+  margin-bottom: -10px;
 }
 
 .desc {
 text-align: left;
 font-size: 16px;
 padding: 10px;
-display: block;
+display: inline-block;
 
 }
 .temp {
@@ -36,7 +37,11 @@ padding: 5px;
 text-align: center;
 margin: 0 auto;
 border-bottom: 2px solid black;
-width:300px;
+width:380px;
+}
+
+.city-list:hover {
+  background-color: #ffd025;
 }
 
 h3 {

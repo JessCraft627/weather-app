@@ -42,7 +42,7 @@ class CityList extends Component  {
     <div className="city-list" >
         <h2 onClick={this.handleCitiesWeather} className="name"> {this.props.name}</h2>
         <span > <img className="weather-icon" src={`http://openweathermap.org/img/w/${this.props.icon}.png`} /> </span>
-        <span className="temp"> {this.props.temp} F</span>
+        <p className="temp"> {this.props.temp} F</p>
         <span className="desc"> {this.props.descr}</span>
         <City datas={this.state.individualCity} />
     </div>
