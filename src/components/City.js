@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Buttons from './Buttons'
 const BASE_URL1 = '//api.openweathermap.org/data/2.5/forecast?q='
-const BASE_URL2 = '&units=Imperial&APPID=773d0a7cd6399fcc9e0901473a2796b0'
+const BASE_URL2 = '&APPID=773d0a7cd6399fcc9e0901473a2796b0&units=imperial'
 
 class City extends React.Component {
   constructor(props) {
@@ -23,9 +23,9 @@ class City extends React.Component {
       fetch(BASE_URL1 + this.state.searchTerm + BASE_URL2)
       .then(r => r.json())
       .then(data => this.setState({
-        cityDetails: data
+        cityDetails: data.list
       }))
-    },1000)
+    },100)
   }
 
   setSearchTermState = () => {
@@ -34,25 +34,28 @@ class City extends React.Component {
     })
   }
 
-  mapTempDetails = () => {
-    if(this.state.cityDetails.length > 0) {
-      this.state.cityDetails.list.map(t=>t.main.temp_max)
-    }
-  }
-
   render() {
-    console.log(this.mapTempDetails())
+    console.log(this.state.cityDetails)
     return (
+      this.state.cityDetails.length > 0
+      ?
       <div>
-        <h2>City Page</h2>
+        <h4>{this.state.cityDetails[6].dt_txt}</h4>
+        <p>{this.state.cityDetails[6].main.temp_max}</p>
+        <h4>{this.state.cityDetails[14].dt_txt}</h4>
+        <p>{this.state.cityDetails[14].main.temp_max}</p>
+        <h4>{this.state.cityDetails[22].dt_txt}</h4>
+        <p>{this.state.cityDetails[22].main.temp_max}</p>
+        <h4>{this.state.cityDetails[30].dt_txt}</h4>
+        <p>{this.state.cityDetails[30].main.temp_max}</p>
+        <h4>{this.state.cityDetails[38].dt_txt}</h4>
+        <p>{this.state.cityDetails[38].main.temp_max}</p>
       </div>
+      :
+      <h1>{'Loading...'}</h1>
     )
   }
 
 }
 
-
 export default City;
-
-
-// {props.datas.map(data  => {data.list[0].main.temp_max})}
