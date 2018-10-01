@@ -13,7 +13,7 @@ class App extends Component {
       cities: [],
       search: '',
       currentUser: '',
-      loading:false
+      loading: false
     }
   }
 
