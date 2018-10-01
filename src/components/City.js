@@ -40,15 +40,21 @@ class City extends React.Component {
       this.state.cityDetails.length > 0
       ?
       <div>
-        <h4>{this.state.cityDetails[6].dt_txt}</h4>
-        <p>{this.state.cityDetails[6].main.temp_max}</p>
-        <h4>{this.state.cityDetails[14].dt_txt}</h4>
+
+        <h4>Day: {this.state.cityDetails[6].dt_txt}</h4>
+        <p>Max Temp: {this.state.cityDetails[6].main.temp_max}</p>
+        <p>Min Temp: {this.state.cityDetails[6].main.temp_min}</p>
+
+        <h4>Day: {this.state.cityDetails[14].dt_txt}</h4>
         <p>{this.state.cityDetails[14].main.temp_max}</p>
-        <h4>{this.state.cityDetails[22].dt_txt}</h4>
+
+        <h4>Day: {this.state.cityDetails[22].dt_txt}</h4>
         <p>{this.state.cityDetails[22].main.temp_max}</p>
-        <h4>{this.state.cityDetails[30].dt_txt}</h4>
+
+        <h4>Day: {this.state.cityDetails[30].dt_txt}</h4>
         <p>{this.state.cityDetails[30].main.temp_max}</p>
-        <h4>{this.state.cityDetails[38].dt_txt}</h4>
+
+        <h4>Day: {this.state.cityDetails[38].dt_txt}</h4>
         <p>{this.state.cityDetails[38].main.temp_max}</p>
       </div>
       :

@@ -5,7 +5,7 @@ function Button(props) {
   return (
     <div>
       <NavLink
-    to="/city"> <div className="backbutton"> </div> </NavLink>
+    to="/weather"> <div className="backbutton"> </div> </NavLink>
     </div>
   )
 }
