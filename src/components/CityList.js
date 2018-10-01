@@ -15,7 +15,8 @@ class CityList extends Component  {
     super(props);
     this.state = {
        toDashboard: false,
-       individualCity: []
+       individualCity: [],
+       city: ''
 
     }
   }
@@ -27,10 +28,18 @@ class CityList extends Component  {
  // }
 
 
- handleCitiesWeather = (e) => {
-  fetch(`//api.openweathermap.org/data/2.5/forecast?q=wichita&units=Imperial&APPID=773d0a7cd6399fcc9e0901473a2796b0`)
+ handleCitiesWeather = (indCity) => {
+  fetch(`//api.openweathermap.org/data/2.5/forecast?q=${indCity}&units=Imperial&APPID=773d0a7cd6399fcc9e0901473a2796b0`)
   .then(r => r.json())
   .then(data => this.setState({individualCity: [data]}))
+}
+
+handleCityValue = (e) => {
+  e.preventDefault()
+  console.log(e.target.innerText)
+  let indCity = e.target.innerText
+  this.handleCitiesWeather(indCity)
+  this.setState({city:' '});
 }
 
   render() {
@@ -39,8 +48,8 @@ class CityList extends Component  {
     // }
 
     return (
-    <div className="city-list" >
-        <h2 onClick={this.handleCitiesWeather} className="name"> {this.props.name}</h2>
+    <div className="city-list" onClick={this.handleCityValue} >
+        <h2  className="name"> {this.props.name}</h2>
         <span > <img className="weather-icon" src={`http://openweathermap.org/img/w/${this.props.icon}.png`} /> </span>
         <p className="temp"> {Math.round(this.props.temp)} F</p>
         <span className="desc"> {this.props.descr}</span>
