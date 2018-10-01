@@ -3,8 +3,10 @@ import { NavLink } from 'react-router-dom';
 
 function Button(props) {
   return (
-    <NavLink
-    to="/weather"> <div className="backbutton"> </div> </NavLink>
+    <div>
+      <NavLink
+    to="/city"> <div className="backbutton"> </div> </NavLink>
+    </div>
   )
 }
 

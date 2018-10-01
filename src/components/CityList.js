@@ -1,16 +1,28 @@
 import React, { Component } from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Redirect,
+  withRouter
+} from "react-router-dom";
 import City from './City'
 
-const CityList = (props) => {
-   // console.log(props)
-  return (
-    <div className="city-list">
-        <h3 className="name"> City: {props.name}</h3>
-        <h3 className="temp"> Temp: {props.temp}</h3>
-        <h3 className="desc"> Description: {props.descr}</h3>
-        <h3 className="icon"> Icon: <img src={`http://openweathermap.org/img/w/${props.icon}.png`} /> </h3>
-    </div>
-  )
+class CityList extends Component  {
+
+  render() {
+    return (
+      <div className="city-list" >
+        <h2 onClick={this.handleCitiesWeather} className="name"><Link to={{
+            pathname: '/city',
+            search: `?query=${this.props.name.toLowerCase()}`
+          }}>{this.props.name}</Link></h2>
+        <span > <img className="weather-icon" src={`http://openweathermap.org/img/w/${this.props.icon}.png`} /> </span>
+        <p className="temp"> {Math.round(this.props.temp)} F</p>
+        <span className="desc"> {this.props.descr}</span>
+      </div>
+    )
+  }
 }
 
 export default CityList

@@ -10,9 +10,38 @@ body {
 .nav {
   text-align: center;
 }
+
+.weather-icon {
+  margin-bottom: -20px;
+
+}
+.name {
+  display: block;
+  font-size: 38px;
+  margin-bottom: -10px;
+}
+
+.desc {
+text-align: left;
+font-size: 16px;
+padding: 10px;
+display: inline-block;
+
+}
+.temp {
+  display: inline-block;
+  font-size: 18px;
+}
 .city-list {
-  padding: 12px;
+padding: 5px;
 text-align: center;
+margin: 0 auto;
+border-bottom: 2px solid black;
+width:380px;
+}
+
+.city-list:hover {
+  background-color: #ffd025;
 }
 
 h3 {
@@ -25,7 +54,7 @@ h3 {
        margin: 20px auto;
       transition: 0.7s;
       display: inline-block;
-       background: url('sunny.png') no-repeat;
+      background: url('sunny.png') no-repeat;
    }
 
  .cf:hover {
@@ -36,13 +65,13 @@ h3 {
 
 .signout-button {
   float:right;
-  width: 6%;
+  width: 8%;
   background-color: #008CBA;
   color: white;
   padding: 12px 16px;
   margin: 18px 10px;
   border: 2px solid #008CBA;
-  border-radius: 4px;
+  border-radius: 9px;
   cursor: pointer;
 }
 
@@ -53,11 +82,11 @@ h3 {
 
 input[type=text], select {
     width: 25%;
-    padding: 22px 20px;
+    padding: 18px 20px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #008CBA;
-    border-radius: 4px;
+    border-radius: 15px;
     box-sizing: border-box;
 }
 
@@ -65,10 +94,10 @@ input[type=submit] {
     width: 8%;
     background-color: #008CBA;
     color: white;
-    padding: 22px 20px;
+    padding: 18px 20px;
     margin: 8px 10px;
     border: none;
-    border-radius: 4px;
+    border-radius: 15px;
     cursor: pointer;
 }
 

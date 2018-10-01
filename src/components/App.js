@@ -7,28 +7,26 @@ const BASE_URL = 'http://localhost:3000/api/v1'
 
 class App extends Component {
 
-  handleCityWeather = (city) => {
-   fetch(`//api.openweathermap.org/data/2.5/weather?q=${city}&units=Imperial&APPID=773d0a7cd6399fcc9e0901473a2796b0`)
-   .then(r => r.json())
-   .then(data => this.setState({cities:[data]}))
-  }
-
-      // this.setState((prevState, cities) => ({cities: prevState.cities + cities.[data]})
-
   constructor(props) {
     super(props);
     this.state = {
       cities: [],
-      searchTerm: '',
-      currentUser: ''
+      search: '',
+      currentUser: '',
+      loading: false
     }
   }
 
-  componentDidMount = () => {
-    fetch(`${BASE_URL}/users`)
-    .then(r=>r.json())
-    .then(users=>this.setState({ currentUser: users[users.length-1] },()=>console.log(this.state.currentUser)))
-  }
+  handleCityWeather = (city) => {
+   fetch(`//api.openweathermap.org/data/2.5/weather?q=${city}&units=Imperial&APPID=773d0a7cd6399fcc9e0901473a2796b0`)
+   .then(r => r.json())
+   .then(data => this.setState({cities:[...this.state.cities, data]},()=>console.log(this.state.cities)))
+ }
+
+  //   fetch(USER_API_URL)
+  //   .then(r=>r.json())
+  //   .then(users=>this.setState({ currentUser: users[users.length-1] }))
+  // }
 
   handleChange = (e) => {
     this.setState({searchTerm: e.target.value});
