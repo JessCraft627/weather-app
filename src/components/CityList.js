@@ -11,6 +11,7 @@ import City from './City'
 class CityList extends Component  {
 
 
+
   render() {
     return (
     <div className="city-list">
@@ -26,6 +27,7 @@ class CityList extends Component  {
 
   )
  }
+
 }
 
 export default CityList

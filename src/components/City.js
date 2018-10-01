@@ -40,6 +40,7 @@ class City extends React.Component {
       this.state.cityDetails.length > 0
       ?
       <div>
+
         <h4>Day: {this.state.cityDetails[6].dt_txt}</h4>
         <p>Max Temp: {this.state.cityDetails[6].main.temp_max}</p>
         <p>Min Temp: {this.state.cityDetails[6].main.temp_min}</p>
