@@ -46,6 +46,7 @@ class CityList extends Component {
     }
   }
 
+
   render() {
     return(
       this.state.displayCity
@@ -53,7 +54,9 @@ class CityList extends Component {
       <div onClick={this.handleCityDisplay} className="city-list">
         <h2 className="name">{this.props.name}</h2>
         <span>
+
           <img className="weather-icon" src={`http://openweathermap.org/img/w/${this.getIcon()}.png`} alt={`${this.props.name}`}/>
+
         </span>
         <p className="temp"> {Math.round(this.props.temp)} F</p>
         <span className="desc"> {this.props.descr}</span>
@@ -64,6 +67,7 @@ class CityList extends Component {
         <h2 className="name">{this.props.name}</h2>
         <span>
           <img className="weather-icon" src={this.getIcon()} alt={`${this.props.name}`}/>
+
         </span>
         <p className="temp"> {Math.round(this.props.temp)} F</p>
         <span className="desc"> {this.props.descr}</span>
@@ -73,3 +77,5 @@ class CityList extends Component {
 }
 
 export default CityList
+
+// <Link to={{ pathname: '/city', search: `?query=${this.props.name.toLowerCase()}`}}>
