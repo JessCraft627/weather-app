@@ -14,8 +14,8 @@ div {
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #008CBA;
-  background-color: #eeeeee;
-  border-radius: 4px;
+  background-color: #F8F8F8;
+  border-radius: 8px;
   box-sizing: border-box;
   text-decoration: none;
 }
@@ -23,26 +23,25 @@ div {
 .login-input:focus {
     outline: none;
 }
+
 .create-profile {
   text-align: center;
   font-weight: lighter;
   margin-top: 30px;
+  letter-spacing: .3px;
 }
-
-
 
 .submit-button {
   height: 200px;
   background-color: #008CBA;
   color: white;
-  padding: 20px 6px;
+  padding: 20px 15px;
   margin: 10px 10px;
   border: none;
-  border-radius: 50%;
+  border-radius: 10%;
   cursor: pointer;
   text-decoration: none;
 }
-
 
 .submit-button:hover {
   background-color: #ffd025;

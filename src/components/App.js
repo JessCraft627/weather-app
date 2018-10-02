@@ -11,7 +11,7 @@ class App extends Component {
     super(props);
     this.state = {
       cities: [],
-      search: '',
+      searchTerm: '',
       currentUser: '',
       loading: false
     }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import logo from '../css/a.gif'
 import Buttons from './Buttons'
 const BASE_URL1 = '//api.openweathermap.org/data/2.5/forecast?q='
@@ -27,29 +27,26 @@ class City extends React.Component {
       .then(data => this.setState({
         cityDetails: data.list
       }))
-    },100)
+    },2000)
   }
 
   setSearchTermState = () => {
     this.setState({
-      searchTerm: this.props.location.search.split('=')[1]
+      searchTerm: this.props.searchTerm.split('=')[1]
     })
   }
 
   render() {
-    console.log(this.state.cityDetails)
     return (
       this.state.cityDetails.length > 0
       ?
-
       <div className="five-day-container">
         <Buttons />
         <div className="day">
-          <h4>Day: {this.state.cityDetails[7].dt_txt}</h4>
+          <h4>{this.state.cityDetails[7].dt_txt.slice(5, 10).replace("-", "/")}</h4>
           <p>Max: {this.state.cityDetails[7].main.temp_max} Min: {this.state.cityDetails[3].main.temp_min}</p>
-          <p></p>
-          <p>Icon: {this.state.cityDetails[3].main.temp_min}</p>
-          <p>Description: {this.state.cityDetails[3].main.temp_min}</p>
+          <span > <img className="ind-weather-icon" src={`http://openweathermap.org/img/w/${this.state.cityDetails[3].weather[0].icon}.png`} /> </span>
+          <p> {this.state.cityDetails[3].weather[0].description}</p>
         </div>
 
         <div className="day">

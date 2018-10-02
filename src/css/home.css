@@ -11,15 +11,15 @@ body {
   text-align: center;
 }
 
-.weather-icon {
-  margin-bottom: -20px;
 
-}
 .name {
-  display: block;
+  display: inline-block;
   text-align: left;
+  padding-left: 10px;
+  float: left;
   font-size: 38px;
   color: black;
+  font-weight: bolder;
   margin-bottom: -10px;
 }
 
@@ -31,24 +31,31 @@ a {
 text-align: left;
 font-size: 16px;
 padding: 10px;
+margin-top: 35px;
 display: inline-block;
 
 }
 .temp {
   display: inline-block;
   font-size: 18px;
+      margin-top: 35px;
 }
 .city-list {
 padding: 5px;
 text-align: center;
-margin: 5px auto;
+margin: 10px auto 30px;
+border: 1px solid #F5F5F5;
 border-left: 10px solid #ffd025;
 border-radius: 5px;
-width:380px;
+width:600px;
+height: 100px;
+transition: all .2s ease-in-out;
 }
 
 .city-list:hover {
   background-color: #ffd025;
+  transform: scale(1.1);
+
 }
 .loader {
   margin: 0 auto;
@@ -61,9 +68,9 @@ h3 {
   margin: 3px;
 }
 .cf {
-       width: 130px;
-       height: 130px;
-       margin: 20px auto;
+      width: 130px;
+      height: 130px;
+      margin: 20px auto;
       transition: 0.7s;
       display: inline-block;
       background: url('sunny.png') no-repeat;
@@ -119,4 +126,13 @@ input[type=submit] {
 
 input[type=submit]:hover {
     background-color: #ffd025;
+}
+input:focus {
+    outline: none;
+}
+.weather-icon {
+  width: 90px;
+  height:90px;
+float: right;
+  margin-bottom: -30px;
 }
