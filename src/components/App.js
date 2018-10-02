@@ -11,22 +11,16 @@ class App extends Component {
     super(props);
     this.state = {
       cities: [],
-      search: '',
-      currentUser: '',
-      loading: false
+      searchTerm: '',
+      currentUser: ''
     }
   }
 
   handleCityWeather = (city) => {
-   fetch(`//api.openweathermap.org/data/2.5/weather?q=${city}&units=Imperial&APPID=773d0a7cd6399fcc9e0901473a2796b0`)
-   .then(r => r.json())
-   .then(data => this.setState({cities:[...this.state.cities, data]},()=>console.log(this.state.cities)))
- }
-
-  //   fetch(USER_API_URL)
-  //   .then(r=>r.json())
-  //   .then(users=>this.setState({ currentUser: users[users.length-1] }))
-  // }
+    fetch(`//api.openweathermap.org/data/2.5/weather?q=${city}&units=Imperial&APPID=773d0a7cd6399fcc9e0901473a2796b0`)
+    .then(r => r.json())
+    .then(cities => this.setState({ cities:[...this.state.cities, cities] }))
+  }
 
   handleChange = (e) => {
     this.setState({searchTerm: e.target.value});
@@ -47,13 +41,20 @@ class App extends Component {
       },
       method: 'POST',
       body: JSON.stringify({
-        name: 'Miami',
-        user_id: 25
+        name: this.state.searchTerm,
+        user_id: this.state.currentUser.id
       })
     });
   }
 
+  componentDidMount = () => {
+    fetch(`${BASE_URL}/users`)
+    .then(r=>r.json())
+    .then(users=>this.setState({ currentUser: users[users.length-1] }))
+  }
+
   render() {
+    console.log(this.state)
     return (
       <div>
         <Navbar />

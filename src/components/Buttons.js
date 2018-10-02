@@ -1,14 +1,17 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom';
+import { withRouter } from 'react-router';
 
-function Button(props) {
-  return (
-    <div>
-      <NavLink
-    to="/weather"> <div className="backbutton"> </div> </NavLink>
-    </div>
-  )
+class Button extends React.Component {
+
+  render() {
+    console.log(this.props)
+    return (
+      <div>
+        <div onClick={this.props.history.goBack} className="backbutton">
+        </div>
+      </div>
+    )
+  }
 }
 
-
-export default Button;
+export default withRouter(Button);

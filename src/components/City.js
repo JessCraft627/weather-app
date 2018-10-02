@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import logo from '../css/a.gif'
 import Buttons from './Buttons'
 const BASE_URL1 = '//api.openweathermap.org/data/2.5/forecast?q='
@@ -27,7 +27,7 @@ class City extends React.Component {
       .then(data => this.setState({
         cityDetails: data.list
       }))
-    },100)
+    },2000)
   }
 
   setSearchTermState = () => {
@@ -37,11 +37,9 @@ class City extends React.Component {
   }
 
   render() {
-    console.log(this.state.cityDetails)
     return (
       this.state.cityDetails.length > 0
       ?
-
       <div className="five-day-container">
         <Buttons />
         <div className="day">
