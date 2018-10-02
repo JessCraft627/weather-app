@@ -43,11 +43,10 @@ class City extends React.Component {
       <div className="five-day-container">
         <Buttons handleCityDisplay={this.props.handleCityDisplay}/>
         <div className="day">
-          <h4>Day: {this.state.cityDetails[7].dt_txt}</h4>
+          <h4>{this.state.cityDetails[7].dt_txt.slice(5, 10).replace("-", "/")}</h4>
           <p>Max: {this.state.cityDetails[7].main.temp_max} Min: {this.state.cityDetails[3].main.temp_min}</p>
-          <p></p>
-          <p>Icon: {this.state.cityDetails[3].main.temp_min}</p>
-          <p>Description: {this.state.cityDetails[3].main.temp_min}</p>
+          <span > <img className="ind-weather-icon" src={`http://openweathermap.org/img/w/${this.state.cityDetails[3].weather[0].icon}.png`} /> </span>
+          <p> {this.state.cityDetails[3].weather[0].description}</p>
         </div>
 
         <div className="day">
