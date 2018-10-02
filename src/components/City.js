@@ -32,7 +32,7 @@ class City extends React.Component {
 
   setSearchTermState = () => {
     this.setState({
-      searchTerm: this.props.location.search.split('=')[1]
+      searchTerm: this.props.searchTerm.split('=')[1]
     })
   }
 
@@ -41,7 +41,7 @@ class City extends React.Component {
       this.state.cityDetails.length > 0
       ?
       <div className="five-day-container">
-        <Buttons />
+        <Buttons handleCityDisplay={this.props.handleCityDisplay}/>
         <div className="day">
           <h4>Day: {this.state.cityDetails[7].dt_txt}</h4>
           <p>Max: {this.state.cityDetails[7].main.temp_max} Min: {this.state.cityDetails[3].main.temp_min}</p>
