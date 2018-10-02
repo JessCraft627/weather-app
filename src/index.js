@@ -14,8 +14,8 @@ import registerServiceWorker from './registerServiceWorker';
 ReactDOM.render((
   <Router>
     <React.Fragment>
-       <Route exact path="/" component={Login} />
-       <Route exact path="/weather" component={App} />
+      <Route exact path="/" component={Login} />
+      <Route exact path="/weather" component={App} />
     </React.Fragment>
   </Router>),
   document.getElementById('root')
