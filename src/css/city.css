@@ -3,7 +3,14 @@
 .backbutton {
   width: 30px;
   height: 30px;
-  margin: 15px;
+  margin: 25px;
   background: url('backbutton.png') no-repeat;
   background-size: contain;
+}
+
+.day {
+  border: 1px solid black;
+  margin: 10px;
+  text-align: center;
+  width: 30%;
 }

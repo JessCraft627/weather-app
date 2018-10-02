@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import logo from '../css/a.gif'
 import Buttons from './Buttons'
 const BASE_URL1 = '//api.openweathermap.org/data/2.5/forecast?q='
 const BASE_URL2 = '&APPID=773d0a7cd6399fcc9e0901473a2796b0&units=imperial'
+
 
 class City extends React.Component {
   constructor(props) {
@@ -39,26 +41,43 @@ class City extends React.Component {
     return (
       this.state.cityDetails.length > 0
       ?
-      <div>
 
-        <h4>Day: {this.state.cityDetails[6].dt_txt}</h4>
-        <p>Max Temp: {this.state.cityDetails[6].main.temp_max}</p>
-        <p>Min Temp: {this.state.cityDetails[6].main.temp_min}</p>
+      <div className="five-day-container">
+        <Buttons />
+        <div className="day">
+          <h4>Day: {this.state.cityDetails[7].dt_txt}</h4>
+          <p>Max: {this.state.cityDetails[7].main.temp_max} Min: {this.state.cityDetails[3].main.temp_min}</p>
+          <p></p>
+          <p>Icon: {this.state.cityDetails[3].main.temp_min}</p>
+          <p>Description: {this.state.cityDetails[3].main.temp_min}</p>
+        </div>
 
-        <h4>Day: {this.state.cityDetails[14].dt_txt}</h4>
-        <p>{this.state.cityDetails[14].main.temp_max}</p>
+        <div className="day">
+          <h4>Day: {this.state.cityDetails[14].dt_txt}</h4>
+          <p>{this.state.cityDetails[14].main.temp_max}</p>
+          <p>Min Temp: {this.state.cityDetails[3].main.temp_min}</p>
+        </div>
 
-        <h4>Day: {this.state.cityDetails[22].dt_txt}</h4>
-        <p>{this.state.cityDetails[22].main.temp_max}</p>
+        <div className="day">
+          <h4>Day: {this.state.cityDetails[22].dt_txt}</h4>
+          <p>{this.state.cityDetails[22].main.temp_max}</p>
+          <p>Min Temp: {this.state.cityDetails[3].main.temp_min}</p>
+        </div>
 
-        <h4>Day: {this.state.cityDetails[30].dt_txt}</h4>
-        <p>{this.state.cityDetails[30].main.temp_max}</p>
+        <div className="day">
+          <h4>Day: {this.state.cityDetails[30].dt_txt}</h4>
+          <p>{this.state.cityDetails[30].main.temp_max}</p>
+          <p>Min Temp: {this.state.cityDetails[3].main.temp_min}</p>
+        </div>
 
-        <h4>Day: {this.state.cityDetails[38].dt_txt}</h4>
-        <p>{this.state.cityDetails[38].main.temp_max}</p>
+        <div className="day">
+          <h4>Day: {this.state.cityDetails[38].dt_txt}</h4>
+          <p>{this.state.cityDetails[38].main.temp_max}</p>
+          <p>Min Temp: {this.state.cityDetails[3].main.temp_min}</p>
+        </div>
       </div>
       :
-      <h1>{'Loading...'}</h1>
+      <img className="loader" src={logo} alt="loading..." />
     )
   }
 

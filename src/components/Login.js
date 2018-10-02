@@ -34,7 +34,7 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
+      <div className="background-photo">
         <h1 className="create-profile">Create Your Profile</h1>
         { this.state.displayError ? <h4>The name field can't be blank</h4> : null }
           <form className="login-form">
