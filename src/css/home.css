@@ -11,7 +11,9 @@ body {
   text-align: center;
 }
 
-
+.five-day-container {
+  margin: 0 auto;
+}
 .name {
   display: inline-block;
   text-align: left;
@@ -58,27 +60,40 @@ transition: all .2s ease-in-out;
 
 }
 .loader {
-  margin: 0 auto;
-  align-items: center;
-  text-align: center;
-  padding-left: 220px;
+display:inline-block;
+background-color: white;
+
 }
+/*
+.loader-div {
+  background-color: white;
+  height: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  justify-content: center;
+  width: 1200px;
+  } */
 h3 {
   padding: 0;
   margin: 3px;
 }
 .cf {
-      width: 130px;
+      width: 6%;
       height: 130px;
-      margin: 20px auto;
+      margin: 10px auto;
+      margin-top: -15px;
+      margin-left: 20px;
       transition: 0.7s;
-      display: inline-block;
+      float: left;
       background: url('sunny.png') no-repeat;
+      background-size: contain;
    }
+
 
  .cf:hover {
    transform: rotate(5deg);
    background: url('night.png') no-repeat;
+   background-size: contain;
  }
 
 .searches {
@@ -88,19 +103,19 @@ h3 {
 
 .signout-button {
   float:right;
-  width: 8%;
+  width: 80px;
   background-color: #008CBA;
   color: white;
   padding: 12px 16px;
-  margin: 18px 10px;
+  margin: 10px 10px;
   border: 2px solid #008CBA;
-  border-radius: 9px;
+  border-radius: 5%;
   cursor: pointer;
 }
 
 .search-form {
   text-align: center;
-  margin-top: 60px;
+  margin-top: 30px;
 }
 
 input[type=text], select {
@@ -117,10 +132,10 @@ input[type=submit] {
     background-color: #008CBA;
     color: white;
     margin: 8px 10px;
-    height: 60px;
-    width: 60px;
+    height: 50px;
+    width: 80px;
     border: none;
-    border-radius: 50%;
+    border-radius: 5%;
     cursor: pointer;
 }
 
@@ -133,6 +148,6 @@ input:focus {
 .weather-icon {
   width: 90px;
   height:90px;
-float: right;
+  float: right;
   margin-bottom: -30px;
 }

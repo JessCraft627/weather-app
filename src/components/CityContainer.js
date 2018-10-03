@@ -11,6 +11,7 @@ const CityContainer = (props) => {
             id={cities.id}
             name={cities.name}
             temp={cities.main.temp}
+            main={cities.weather[0].main}
             descr={cities.weather[0].description}
             icon={cities.weather[0].icon}/>
         </div>
@@ -20,4 +21,3 @@ const CityContainer = (props) => {
 }
 
 export default CityContainer
-

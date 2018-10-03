@@ -19,7 +19,7 @@ class App extends Component {
   handleCityWeather = (city) => {
     fetch(`//api.openweathermap.org/data/2.5/weather?q=${city}&units=Imperial&APPID=773d0a7cd6399fcc9e0901473a2796b0`)
     .then(r => r.json())
-    .then(cities => this.setState({ cities:[...this.state.cities, cities] }))
+    .then(cities => this.setState({ cities:[...this.state.cities, cities], searchTerm: '' }))
   }
 
   handleChange = (e) => {
@@ -31,6 +31,7 @@ class App extends Component {
     let city = this.state.searchTerm;
     this.handleCityWeather(city);
     this.persistCitiesToBackend(city);
+    e.target.reset()
   }
 
   persistCitiesToBackend = () => {
@@ -47,11 +48,11 @@ class App extends Component {
     });
   }
 
-  componentDidMount = () => {
-    fetch(`${BASE_URL}/users`)
-    .then(r=>r.json())
-    .then(users=>this.setState({ currentUser: users[users.length-1] }))
-  }
+  // componentDidMount = () => {
+  //   fetch(`${BASE_URL}/users`)
+  //   .then(r=>r.json())
+  //   .then(users=>this.setState({ currentUser: users[users.length-1] }))
+  // }
 
   render() {
     console.log(this.state)

@@ -14,4 +14,4 @@ class Button extends React.Component {
   }
 }
 
-export default withRouter(Button);
+export default Button;

@@ -55,7 +55,7 @@ class CityList extends Component {
         <h2 className="name">{this.props.name}</h2>
         <span>
 
-          <img className="weather-icon" src={`http://openweathermap.org/img/w/${this.getIcon()}.png`} alt={`${this.props.name}`}/>
+          <img className="weather-icon" src={this.getIcon()} alt={`${this.props.name}`}/>
 
         </span>
         <p className="temp"> {Math.round(this.props.temp)} F</p>

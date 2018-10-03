@@ -1,6 +1,5 @@
 import React from 'react';
 import logo from '../css/a.gif'
-import Buttons from './Buttons'
 const BASE_URL1 = '//api.openweathermap.org/data/2.5/forecast?q='
 const BASE_URL2 = '&APPID=773d0a7cd6399fcc9e0901473a2796b0&units=imperial'
 
@@ -27,7 +26,7 @@ class City extends React.Component {
       .then(data => this.setState({
         cityDetails: data.list
       }))
-    },2000)
+    },4000)
   }
 
   setSearchTermState = () => {
@@ -41,7 +40,7 @@ class City extends React.Component {
       this.state.cityDetails.length > 0
       ?
       <div className="five-day-container">
-        <Buttons handleCityDisplay={this.props.handleCityDisplay}/>
+
         <div className="day">
           <h4>{this.state.cityDetails[7].dt_txt.slice(5, 10).replace("-", "/")}</h4>
           <p>Max: {this.state.cityDetails[7].main.temp_max} Min: {this.state.cityDetails[3].main.temp_min}</p>
@@ -73,8 +72,9 @@ class City extends React.Component {
           <p>Min Temp: {this.state.cityDetails[3].main.temp_min}</p>
         </div>
       </div>
-      :
+      : <div className="loader-div">
       <img className="loader" src={logo} alt="loading..." />
+      </div>
     )
   }
 
