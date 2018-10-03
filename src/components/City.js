@@ -72,38 +72,38 @@ class City extends React.Component {
         <div className="five-day-container">
 
           <div className="day">
-            <h4>{this.state.cityDetails[6].dt_txt.slice(5, 10).replace("-", "/")}</h4>
-            <p>Max: {this.state.cityDetails[6].main.temp_max} Min: {this.state.cityDetails[3].main.temp_min}</p>
+            <h4 className="idate">{this.state.cityDetails[6].dt_txt.slice(5, 10).replace("-", "/")}</h4>
+            <p className="itemp">{this.state.cityDetails[6].main.temp_max} <span class="hyphen">/</span> {this.state.cityDetails[3].main.temp_min}</p>
             <span > <img className="ind-weather-icon" src={this.getIcon(6)} /> </span>
-            <p> {this.state.cityDetails[3].weather[0].description}</p>
+            <p className="idescription"> {this.state.cityDetails[3].weather[0].description}</p>
           </div>
 
           <div className="day">
-            <h4>{this.state.cityDetails[14].dt_txt.slice(5, 10).replace("-", "/")}</h4>
-            <p>Max: {this.state.cityDetails[14].main.temp_max} Min: {this.state.cityDetails[11].main.temp_min}</p>
+            <h4 className="idate">{this.state.cityDetails[14].dt_txt.slice(5, 10).replace("-", "/")}</h4>
+            <p className="itemp">{this.state.cityDetails[14].main.temp_max} <span class="hyphen">/</span> {this.state.cityDetails[11].main.temp_min}</p>
             <span > <img className="ind-weather-icon" src={this.getIcon(14)} /> </span>
-            <p> {this.state.cityDetails[14].weather[0].description}</p>
+            <p className="idescription"> {this.state.cityDetails[14].weather[0].description}</p>
           </div>
 
           <div className="day">
-            <h4>{this.state.cityDetails[22].dt_txt.slice(5, 10).replace("-", "/")}</h4>
-            <p>Max: {this.state.cityDetails[22].main.temp_max} Min: {this.state.cityDetails[19].main.temp_min}</p>
+            <h4 className="idate">{this.state.cityDetails[22].dt_txt.slice(5, 10).replace("-", "/")}</h4>
+            <p className="itemp">{this.state.cityDetails[22].main.temp_max} <span class="hyphen">/</span> {this.state.cityDetails[19].main.temp_min}</p>
             <span > <img className="ind-weather-icon" src={this.getIcon(22)} /> </span>
-            <p> {this.state.cityDetails[22].weather[0].description}</p>
+            <p className="idescription"> {this.state.cityDetails[22].weather[0].description}</p>
           </div>
 
           <div className="day">
-            <h4>{this.state.cityDetails[30].dt_txt.slice(5, 10).replace("-", "/")}</h4>
-            <p>Max: {this.state.cityDetails[30].main.temp_max} Min: {this.state.cityDetails[27].main.temp_min}</p>
+            <h4 className="idate">{this.state.cityDetails[30].dt_txt.slice(5, 10).replace("-", "/")}</h4>
+            <p className="itemp">{this.state.cityDetails[30].main.temp_max} <span class="hyphen">/</span> {this.state.cityDetails[27].main.temp_min}</p>
             <span > <img className="ind-weather-icon" src={this.getIcon(30)} /> </span>
-            <p> {this.state.cityDetails[30].weather[0].description}</p>
+            <p className="idescription"> {this.state.cityDetails[30].weather[0].description}</p>
           </div>
 
-          <div className="day">
-            <h4>{this.state.cityDetails[38].dt_txt.slice(5, 10).replace("-", "/")}</h4>
-            <p>Max: {this.state.cityDetails[38].main.temp_max}  Min: {this.state.cityDetails[35].main.temp_min}</p>
-            <span > <img className="ind-weather-icon" src={this.getIcon(38)} /> </span>
-            <p> {this.state.cityDetails[38].weather[0].description}</p>
+          <div className="days">
+            <h4 className="idate">{this.state.cityDetails[37].dt_txt.slice(5, 10).replace("-", "/")}</h4>
+            <p className="itemp">{this.state.cityDetails[37].main.temp_max} <span class="hyphen">/</span> {this.state.cityDetails[34].main.temp_min}</p>
+            <span > <img className="ind-weather-icon" src={this.getIcon(37)} /> </span>
+            <p className="idescription"> {this.state.cityDetails[37].weather[0].description}</p>
           </div>
         </div>
         : <div className="loader-div">

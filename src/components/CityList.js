@@ -55,7 +55,7 @@ class CityList extends Component {
         <span>
           <img className="weather-icon" src={this.getIcon()} alt={`${this.props.name}`}/>
         </span>
-        <p className="temp"> {Math.round(this.props.temp)} F</p>
+        <p className="temp"> {Math.round(this.props.temp)} °F</p>
         <span className="desc"> {this.props.descr}</span>
         <City handleCityDisplay={this.handleCityDisplay} searchTerm={`?query=${this.props.name.toLowerCase()}`}/>
       </div>
@@ -65,7 +65,7 @@ class CityList extends Component {
         <span>
           <img className="weather-icon" src={this.getIcon()} alt={`${this.props.name}`}/>
         </span>
-        <p className="temp"> {Math.round(this.props.temp)} F</p>
+        <p className="temp"> {Math.round(this.props.temp)} °F</p>
         <span className="desc"> {this.props.descr}</span>
       </div>
     )
