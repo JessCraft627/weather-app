@@ -10,6 +10,7 @@ const CityContainer = (props) => {
             key={cities.key}
             id={cities.id}
             name={cities.name}
+            main={cities.weather[0].main}
             temp={cities.main.temp}
             descr={cities.weather[0].description}
             icon={cities.weather[0].icon}/>
