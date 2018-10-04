@@ -8,16 +8,22 @@ import Login from './components/Login';
 import App from './components/App';
 import City from './components/City';
 import registerServiceWorker from './registerServiceWorker';
+import {createStore} from 'redux'
+import reducer from './reducers'
+import {Provider} from 'react-redux'
 
-
+const store = createStore(reducer)
+//debugger
 
 ReactDOM.render((
-  <Router>
-    <React.Fragment>
-      <Route exact path="/" component={Login} />
-      <Route exact path="/weather" component={App} />
-    </React.Fragment>
-  </Router>),
+  <Provider store={store}>
+    <Router>
+      <React.Fragment>
+        <Route exact path="/" component={Login} />
+        <Route exact path="/weather" component={App} />
+      </React.Fragment>
+    </Router>
+  </Provider>),
   document.getElementById('root')
 );
 

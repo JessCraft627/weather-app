@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import Search from './Search'
 import CityContainer from './CityContainer'
 import Navbar from './Navbar'
-const BASE_URL = 'http://localhost:3000/api/v1'
+import {connect} from 'react-redux'
 
+const BASE_URL = 'http://localhost:3000/api/v1'
 
 class App extends Component {
 
@@ -14,6 +15,7 @@ class App extends Component {
       searchTerm: '',
       currentUser: ''
     }
+    //debugger
   }
 
   handleCityWeather = (city) => {
@@ -59,6 +61,7 @@ class App extends Component {
     return (
       <div>
         <Navbar />
+        <h1>Ciao {this.props.name}</h1>
         <Search handleChange={this.handleChange} searchTerm={this.state.searchTerm} handleSubmit={this.handleSubmit} persistCitiesToBackend={this.persistCitiesToBackend}/>
         <CityContainer cityData={this.state.cities}/>
       </div>
@@ -66,4 +69,8 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  name:state.name
+}) 
+
+export default connect(mapStateToProps)(App);
