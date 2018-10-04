@@ -1,12 +1,3 @@
-import cloud from '../css/icons/Cloud.png'
-import sun from '../css/icons/Sun.png'
-import rain from '../css/icons/Cloud-Rain.png'
-import atmos from '../css/icons/Cloud-Fog.png'
-import thunder from '../css/icons/Cloud-Lightning.png'
-import drizzle from '../css/icons/Cloud-Drizzle.png'
-import snow from '../css/icons/Cloud-Snow-Moon.png'
-
-
 import React, { Component } from 'react';
 
 import cloud from '../css/icons/Cloud.png'
@@ -16,7 +7,6 @@ import atmos from '../css/icons/Cloud-Fog.png'
 import thunder from '../css/icons/Cloud-Lightning.png'
 import drizzle from '../css/icons/Cloud-Drizzle.png'
 import snow from '../css/icons/Cloud-Snow-Moon.png'
-import { Link } from "react-router-dom";
 import City from './City'
 
 class CityList extends Component {
@@ -31,7 +21,7 @@ class CityList extends Component {
   handleCityDisplay = () => {
     this.setState({
       displayCity: !this.state.displayCity
-    },()=>console.log(this.state.displayCity))
+    })
   }
 
   getIcon = () => {

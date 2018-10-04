@@ -6,7 +6,6 @@ import './css/city.css';
 import './css/login.css';
 import Login from './components/Login';
 import App from './components/App';
-import City from './components/City';
 import registerServiceWorker from './registerServiceWorker';
 
 

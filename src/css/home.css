@@ -49,21 +49,13 @@ display: inline-block;
 .city-list {
 padding: 5px;
 text-align: center;
-<<<<<<< HEAD
-margin: 10px auto 30px;
-border: 1px solid #F5F5F5;
-border-left: 10px solid #ffd025;
-border-radius: 5px;
-width:600px;
-height: 100px;
-=======
+
 margin: 15px auto 30px;
 border: 1px solid #F5F5F5;
 border-left: 10px solid #ffd025;
 border-radius: 5px;
 width:700px;
 height: 80px;
->>>>>>> master2
 transition: all .2s ease-in-out;
 }
 
