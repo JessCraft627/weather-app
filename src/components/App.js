@@ -48,11 +48,11 @@ class App extends Component {
     });
   }
 
-  // componentDidMount = () => {
-  //   fetch(`${BASE_URL}/users`)
-  //   .then(r=>r.json())
-  //   .then(users=>this.setState({ currentUser: users[users.length-1] }))
-  // }
+  componentDidMount = () => {
+    fetch(`${BASE_URL}/users`)
+    .then(r=>r.json())
+    .then(users=>this.setState({ currentUser: users[users.length-1] }))
+  }
 
   render() {
     console.log(this.state)

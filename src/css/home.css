@@ -70,15 +70,10 @@ transition: all .2s ease-in-out;
   background-color: #ffd025;
   transform: scale(1.1);
 }
-/* .city-lists:hover {
-  background-color: #415fd4;
-  transform: scale(1.1);
-  color: white;
-} */
+
 .city-lists:hover{
   padding-top: 5px;
   background-color: #415fd4;
-  transform: scale(1.1);
   color: white;
 }
 .name:hover {
