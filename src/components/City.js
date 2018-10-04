@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../css/a.gif'
-import Buttons from './Buttons'
+// import Buttons from './Buttons'
 import cloud from '../css/icons/Cloud.png'
 import sun from '../css/icons/Sun.png'
 import rain from '../css/icons/Cloud-Rain.png'

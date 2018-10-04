@@ -1,10 +1,10 @@
-import cloud from '../css/icons/Cloud.png'
-import sun from '../css/icons/Sun.png'
-import rain from '../css/icons/Cloud-Rain.png'
-import atmos from '../css/icons/Cloud-Fog.png'
-import thunder from '../css/icons/Cloud-Lightning.png'
-import drizzle from '../css/icons/Cloud-Drizzle.png'
-import snow from '../css/icons/Cloud-Snow-Moon.png'
+// import cloud from '../css/icons/Cloud.png'
+// import sun from '../css/icons/Sun.png'
+// import rain from '../css/icons/Cloud-Rain.png'
+// import atmos from '../css/icons/Cloud-Fog.png'
+// import thunder from '../css/icons/Cloud-Lightning.png'
+// import drizzle from '../css/icons/Cloud-Drizzle.png'
+// import snow from '../css/icons/Cloud-Snow-Moon.png'
 
 
 import React, { Component } from 'react';
