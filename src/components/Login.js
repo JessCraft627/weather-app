@@ -57,9 +57,3 @@ class Login extends Component {
 }
 
 export default Login;
-
-// Responsibility
-//   1. Is a class component that acts as a login form to send data[name] to the backend
-//   2. Is the first page you see after opening our app
-//   3. After submitting takes you to home page/route
-//   4. Is its own route

@@ -8,6 +8,14 @@ import snow from '../css/icons/Cloud-Snow-Moon.png'
 
 
 import React, { Component } from 'react';
+
+import cloud from '../css/icons/Cloud.png'
+import sun from '../css/icons/Sun.png'
+import rain from '../css/icons/Cloud-Rain.png'
+import atmos from '../css/icons/Cloud-Fog.png'
+import thunder from '../css/icons/Cloud-Lightning.png'
+import drizzle from '../css/icons/Cloud-Drizzle.png'
+import snow from '../css/icons/Cloud-Snow-Moon.png'
 import { Link } from "react-router-dom";
 import City from './City'
 
@@ -51,14 +59,13 @@ class CityList extends Component {
     return(
       this.state.displayCity
       ?
-      <div onClick={this.handleCityDisplay} className="city-list">
+      <div onClick={this.handleCityDisplay} className="city-lists">
         <h2 className="name">{this.props.name}</h2>
         <span>
-
-          <img className="weather-icon" src={`http://openweathermap.org/img/w/${this.getIcon()}.png`} alt={`${this.props.name}`}/>
+          <img className="weather-icon" src={this.getIcon()} alt={`${this.props.name}`}/>
 
         </span>
-        <p className="temp"> {Math.round(this.props.temp)} F</p>
+        <p className="temp"> {Math.round(this.props.temp)} °F</p>
         <span className="desc"> {this.props.descr}</span>
         <City handleCityDisplay={this.handleCityDisplay} searchTerm={`?query=${this.props.name.toLowerCase()}`}/>
       </div>
@@ -67,9 +74,8 @@ class CityList extends Component {
         <h2 className="name">{this.props.name}</h2>
         <span>
           <img className="weather-icon" src={this.getIcon()} alt={`${this.props.name}`}/>
-
         </span>
-        <p className="temp"> {Math.round(this.props.temp)} F</p>
+        <p className="temp"> {Math.round(this.props.temp)} °F</p>
         <span className="desc"> {this.props.descr}</span>
       </div>
     )
@@ -77,5 +83,3 @@ class CityList extends Component {
 }
 
 export default CityList
-
-// <Link to={{ pathname: '/city', search: `?query=${this.props.name.toLowerCase()}`}}>

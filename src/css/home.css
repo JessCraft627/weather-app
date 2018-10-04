@@ -1,5 +1,3 @@
-/*  This will hold our home page css  */
-
 
 body {
   margin: 0;
@@ -12,6 +10,12 @@ body {
 }
 
 
+
+=======
+.five-day-container {
+  margin: 0 auto;
+}
+
 .name {
   display: inline-block;
   text-align: left;
@@ -20,13 +24,15 @@ body {
   font-size: 38px;
   color: black;
   font-weight: bolder;
-  margin-bottom: -10px;
+  margin-top: 16px;
+
 }
 
 a {
   color: black;
   text-decoration: none;
 }
+
 .desc {
 text-align: left;
 font-size: 16px;
@@ -43,42 +49,84 @@ display: inline-block;
 .city-list {
 padding: 5px;
 text-align: center;
+<<<<<<< HEAD
 margin: 10px auto 30px;
 border: 1px solid #F5F5F5;
 border-left: 10px solid #ffd025;
 border-radius: 5px;
 width:600px;
 height: 100px;
+=======
+margin: 15px auto 30px;
+border: 1px solid #F5F5F5;
+border-left: 10px solid #ffd025;
+border-radius: 5px;
+width:700px;
+height: 80px;
+>>>>>>> master2
 transition: all .2s ease-in-out;
 }
+
+.city-lists {
+padding: 7px;
+text-align: center;
+margin: 15px auto 30px;
+border: 1px solid #F5F5F5;
+border-left: 10px solid #ffd025;
+border-radius: 5px;
+width:700px;
+height: 375px;
+transition: all .2s ease-in-out;
+}
+
 
 .city-list:hover {
   background-color: #ffd025;
   transform: scale(1.1);
+}
 
+.city-lists:hover{
+  padding-top: 5px;
+  background-color: #415fd4;
+  color: white;
 }
-.loader {
-  margin: 0 auto;
-  align-items: center;
-  text-align: center;
-  padding-left: 220px;
+.name:hover {
+  color: white;
 }
+
+.loader-div {
+    background: url('a.gif') no-repeat;
+    background-color: white;
+    height: 460px;
+    width: 790px;
+    margin-left: -80px;
+    margin-top: -100px;
+    background-position: center;
+    background-size: contain;
+}
+
 h3 {
   padding: 0;
   margin: 3px;
 }
+
 .cf {
-      width: 130px;
+      width: 6%;
       height: 130px;
-      margin: 20px auto;
+      margin: 10px auto;
+      margin-top: -15px;
+      margin-left: 20px;
       transition: 0.7s;
-      display: inline-block;
+      float: left;
       background: url('sunny.png') no-repeat;
+      background-size: contain;
    }
+
 
  .cf:hover {
    transform: rotate(5deg);
    background: url('night.png') no-repeat;
+   background-size: contain;
  }
 
 .searches {
@@ -88,19 +136,19 @@ h3 {
 
 .signout-button {
   float:right;
-  width: 8%;
-  background-color: #008CBA;
+  width: 80px;
+  background-color: #415fd4;
   color: white;
   padding: 12px 16px;
-  margin: 18px 10px;
-  border: 2px solid #008CBA;
-  border-radius: 9px;
+  margin: 10px 20px;
+  border: 2px solid #415fd4;
+  border-radius: 5%;
   cursor: pointer;
 }
 
 .search-form {
   text-align: center;
-  margin-top: 60px;
+  margin-top: 30px;
 }
 
 input[type=text], select {
@@ -108,19 +156,19 @@ input[type=text], select {
     padding: 18px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #008CBA;
+    border: 1px solid #415fd4;
     border-radius: 15px;
     box-sizing: border-box;
 }
 
 input[type=submit] {
-    background-color: #008CBA;
+    background-color: #415fd4;
     color: white;
     margin: 8px 10px;
-    height: 60px;
-    width: 60px;
+    height: 45px;
+    width: 80px;
     border: none;
-    border-radius: 50%;
+    border-radius: 5%;
     cursor: pointer;
 }
 
@@ -129,10 +177,4 @@ input[type=submit]:hover {
 }
 input:focus {
     outline: none;
-}
-.weather-icon {
-  width: 90px;
-  height:90px;
-float: right;
-  margin-bottom: -30px;
 }

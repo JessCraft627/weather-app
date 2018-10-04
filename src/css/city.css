@@ -1,16 +1,48 @@
-/*  This will hold our individual city show page css  */
-
-.backbutton {
-  width: 30px;
-  height: 30px;
-  margin: 25px;
-  background: url('backbutton.png') no-repeat;
-  background-size: contain;
-}
-
 .day {
-  border: 1px solid black;
-  margin: 10px;
+  border-right: 1px solid #ffd025;
   text-align: center;
   width: 30%;
+  padding: 11px;
+  border-radius: 0%;
+}
+.days {
+  text-align: center;
+  width: 30%;
+  padding: 11px;
+  border-radius: 0%;
+}
+
+.five-day-container {
+  display: flex;
+  margin-top: 30px;
+}
+
+
+.weather-icon {
+  width: 90px;
+  height:90px;
+  float: right;
+  margin-bottom: -30px;
+}
+
+.ind-weather-icon {
+  width: 60px;
+  height:60px;
+  background-color: #ffd025;
+  border-radius: 50%;
+}
+
+.idate {
+  font-size: 16px;
+}
+
+.itemp {
+  font-weight: lighter;
+}
+
+.idescription {
+  font-weight: 100;
+}
+.hyphen {
+  color: #ffd025;
 }

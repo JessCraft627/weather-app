@@ -31,6 +31,7 @@ class App extends Component {
     let city = this.state.searchTerm;
     this.handleCityWeather(city);
     this.persistCitiesToBackend(city);
+    e.target.reset()
   }
 
   persistCitiesToBackend = () => {

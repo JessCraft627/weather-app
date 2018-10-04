@@ -1,9 +1,10 @@
-/*  This will hold our login page css  */
-div {
+
+  div {
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
   align-content: center;
+
 }
 .login-form {
   text-align: center;
@@ -13,8 +14,8 @@ div {
   padding: 22px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #008CBA;
   background-color: #F8F8F8;
+  border: 1px solid #415fd4;
   border-radius: 8px;
   box-sizing: border-box;
   text-decoration: none;
@@ -28,16 +29,19 @@ div {
   text-align: center;
   font-weight: lighter;
   margin-top: 30px;
+  border-bottom: 1px solid white;
+  margin-left: 300px;
+  margin-right: 300px;
   letter-spacing: .3px;
 }
 
 .submit-button {
   height: 200px;
-  background-color: #008CBA;
+  background-color: #415fd4;
   color: white;
   padding: 20px 15px;
   margin: 10px 10px;
-  border: none;
+  border: 1px solid white;
   border-radius: 10%;
   cursor: pointer;
   text-decoration: none;
