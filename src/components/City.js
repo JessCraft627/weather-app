@@ -1,5 +1,4 @@
 import React from 'react';
-
 import cloud from '../css/icons/Cloud.png'
 import sun from '../css/icons/Sun.png'
 import rain from '../css/icons/Cloud-Rain.png'
@@ -64,46 +63,44 @@ class City extends React.Component {
   }
 
   render() {
-    return (
-      this.state.cityDetails.length > 0
+      return (
+        this.state.cityDetails.length > 0
+        ?
+        <div className="five-day-container">
+          <div className="day">
+            <h4 className="idate">{this.state.cityDetails[6].dt_txt.slice(5, 10).replace("-", "/")}</h4>
+            <p className="itemp">{this.state.cityDetails[6].main.temp_max} <span className="hyphen">/</span> {this.state.cityDetails[3].main.temp_min}</p>
+            <span > <img className="ind-weather-icon" src={this.getIcon(6)} alt= "" /> </span>
+            <p className="idescription"> {this.state.cityDetails[3].weather[0].description}</p>
+          </div>
 
-      ?
+          <div className="day">
+            <h4 className="idate">{this.state.cityDetails[14].dt_txt.slice(5, 10).replace("-", "/")}</h4>
+            <p className="itemp">{this.state.cityDetails[14].main.temp_max} <span className="hyphen">/</span> {this.state.cityDetails[11].main.temp_min}</p>
+            <span > <img className="ind-weather-icon" src={this.getIcon(14)} alt= " "/> </span>
+            <p className="idescription"> {this.state.cityDetails[14].weather[0].description}</p>
+          </div>
 
-      <div className="five-day-container">
-        <div className="day">
-          <h4 className="idate">{this.state.cityDetails[6].dt_txt.slice(5, 10).replace("-", "/")}</h4>
-          <p className="itemp">{this.state.cityDetails[6].main.temp_max} <span className="hyphen">/</span> {this.state.cityDetails[3].main.temp_min}</p>
-          <span>
-            <img className="ind-weather-icon" src={this.getIcon(6)} alt={`${this.state.cityDetails[6].weather[0].main} weather icon`}/>
-          </span>
-          <p className="idescription">{this.state.cityDetails[3].weather[0].description}</p>
-        </div>
+          <div className="day">
+            <h4 className="idate">{this.state.cityDetails[22].dt_txt.slice(5, 10).replace("-", "/")}</h4>
+            <p className="itemp">{this.state.cityDetails[22].main.temp_max} <span className="hyphen">/</span> {this.state.cityDetails[19].main.temp_min}</p>
+            <span > <img className="ind-weather-icon" src={this.getIcon(22)} alt= " " /> </span>
+            <p className="idescription"> {this.state.cityDetails[22].weather[0].description}</p>
+          </div>
 
-        <div className="day">
-          <h4 className="idate">{this.state.cityDetails[14].dt_txt.slice(5, 10).replace("-", "/")}</h4>
-          <p className="itemp">{this.state.cityDetails[14].main.temp_max} <span className="hyphen">/</span> {this.state.cityDetails[11].main.temp_min}</p>
-          <span>
-            <img className="ind-weather-icon" src={this.getIcon(14)} alt={`${this.state.cityDetails[14].weather[0].main} weather icon`}/>
-          </span>
-          <p className="idescription">{this.state.cityDetails[14].weather[0].description}</p>
-        </div>
+          <div className="day">
+            <h4 className="idate">{this.state.cityDetails[30].dt_txt.slice(5, 10).replace("-", "/")}</h4>
+            <p className="itemp">{this.state.cityDetails[30].main.temp_max} <span className="hyphen">/</span> {this.state.cityDetails[27].main.temp_min}</p>
+            <span > <img className="ind-weather-icon" src={this.getIcon(30)} alt= " " /> </span>
+            <p className="idescription"> {this.state.cityDetails[30].weather[0].description}</p>
+          </div>
 
-        <div className="day">
-          <h4 className="idate">{this.state.cityDetails[22].dt_txt.slice(5, 10).replace("-", "/")}</h4>
-          <p className="itemp">{this.state.cityDetails[22].main.temp_max} <span className="hyphen">/</span> {this.state.cityDetails[19].main.temp_min}</p>
-          <span>
-            <img className="ind-weather-icon" src={this.getIcon(22)} alt={`${this.state.cityDetails[22].weather[0].main} weather icon`}/>
-          </span>
-          <p className="idescription">{this.state.cityDetails[22].weather[0].description}</p>
-        </div>
-
-        <div className="day">
-          <h4 className="idate">{this.state.cityDetails[30].dt_txt.slice(5, 10).replace("-", "/")}</h4>
-          <p className="itemp">{this.state.cityDetails[30].main.temp_max} <span className="hyphen">/</span> {this.state.cityDetails[27].main.temp_min}</p>
-          <span>
-            <img className="ind-weather-icon" src={this.getIcon(30)} alt={`${this.state.cityDetails[30].weather[0].main} weather icon`}/>
-          </span>
-          <p className="idescription">{this.state.cityDetails[30].weather[0].description}</p>
+          <div className="days">
+            <h4 className="idate">{this.state.cityDetails[37].dt_txt.slice(5, 10).replace("-", "/")}</h4>
+            <p className="itemp">{this.state.cityDetails[37].main.temp_max} <span className="hyphen">/</span> {this.state.cityDetails[34].main.temp_min}</p>
+            <span > <img className="ind-weather-icon" src={this.getIcon(37)} alt= " " /> </span>
+            <p className="idescription"> {this.state.cityDetails[37].weather[0].description}</p>
+          </div>
         </div>
 
         <div className="days">

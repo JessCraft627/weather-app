@@ -52,7 +52,7 @@ class Login extends Component {
               className="submit-button"
               onClick={this.handleProfileCreation}
               to={this.state.input !== '' ? "/weather" : "/"}
-              exact
+              exact="true"
             >Submit</Link>
           </form>
       </div>
