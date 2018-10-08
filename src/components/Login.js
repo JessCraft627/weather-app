@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import {connect} from 'react-redux'
-import {LOGIN_USER} from './../actions' 
+import {LOGIN_USER} from './../actions'
 
 const BASE_URL = 'http://localhost:3000/api/v1/users'
 
@@ -11,11 +11,6 @@ class Login extends Component {
     displayError: false
   }
 
-  // constructor(props) {
-  //   super(props)
-  //   debugger
-  // }
-
   handleInputChange = event => {
     this.setState({
       input: event.target.value
@@ -23,27 +18,23 @@ class Login extends Component {
   }
 
   handleProfileCreation = event => {
-    // if (this.state.input !== '') {
-    //   fetch(BASE_URL, {
-    //     headers: {
-    //       'Accept': 'application/json',
-    //       'Content-Type': 'application/json'
-    //     },
-    //     method: 'POST',
-    //     body: JSON.stringify({
-    //       name: this.state.input
-    //     })
-    //   })
-    //   this.setState({ displayError: false })
-    // } else {
-    //   this.setState({ displayError: true })
-    // }
+    if (this.state.input !== '') {
+      fetch(BASE_URL, {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        method: 'POST',
+        body: JSON.stringify({
+          name: this.state.input
+        })
+      })
+      this.setState({ displayError: false })
+    } else {
+      this.setState({ displayError: true })
+    }
     this.props.handleSetName(this.state.input)
   }
-
-  // componentDidUpdate(prevProps, prevState, snapshot) {
-  //   debugger
-  // }
 
   render() {
     return (
@@ -67,11 +58,11 @@ class Login extends Component {
       </div>
     );
   }
-}
+} // end of Login class
 
-const mapStateToProps = state => ({
-  name:state.name
-}) 
+const mapStateToProps = state => {
+  return { name: state.name }
+}
 
 const mapDispatchToProps = dispatch => {
   return {

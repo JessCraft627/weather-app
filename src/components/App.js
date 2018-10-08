@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import Search from './Search'
 import CityContainer from './CityContainer'
 import Navbar from './Navbar'
-import {connect} from 'react-redux'
 
 const BASE_URL = 'http://localhost:3000/api/v1'
 
 class App extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -15,7 +14,6 @@ class App extends Component {
       searchTerm: '',
       currentUser: ''
     }
-    //debugger
   }
 
   handleCityWeather = (city) => {
@@ -57,7 +55,7 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state)
+    console.log(this.props)
     return (
       <div>
         <Navbar />
@@ -67,10 +65,14 @@ class App extends Component {
       </div>
     );
   }
-}
 
-const mapStateToProps = state => ({
-  name:state.name
-}) 
+} // end of App class
+
+const mapStateToProps = state => {
+  console.log(state)
+  return ({
+  name: state.name
+})
+}
 
 export default connect(mapStateToProps)(App);
