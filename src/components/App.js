@@ -59,7 +59,6 @@ class App extends Component {
     return (
       <div>
         <Navbar />
-        <h1>Ciao {this.props.name}</h1>
         <Search handleChange={this.handleChange} searchTerm={this.state.searchTerm} handleSubmit={this.handleSubmit} persistCitiesToBackend={this.persistCitiesToBackend}/>
         <CityContainer cityData={this.state.cities}/>
       </div>
@@ -69,10 +68,7 @@ class App extends Component {
 } // end of App class
 
 const mapStateToProps = state => {
-  console.log(state)
-  return ({
-  name: state.name
-})
+  return { name: state.name }
 }
 
 export default connect(mapStateToProps)(App);

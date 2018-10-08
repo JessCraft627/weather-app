@@ -1,12 +1,7 @@
+import {combineReducers} from 'redux'
 import { ADD_USER } from './../actions'
+import name from './name'
 
-export default function weatherReducer(state = {users: []}, action) {
-  switch (action.type) {
-    case ADD_USER:
-      return Object.assign({}, state, {
-        users: state.items.concat(action.user)
-      });
-    default:
-      return state;
-  }
-}
+export default combineReducers({
+  name
+})
