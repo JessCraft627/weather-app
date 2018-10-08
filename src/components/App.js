@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import Search from './Search'
 import CityContainer from './CityContainer'
 import Navbar from './Navbar'
+
 const BASE_URL = 'http://localhost:3000/api/v1'
 
-
 class App extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -63,6 +63,11 @@ class App extends Component {
       </div>
     );
   }
+
+} // end of App class
+
+const mapStateToProps = state => {
+  return { name: state.name }
 }
 
-export default App;
+export default connect(mapStateToProps)(App);

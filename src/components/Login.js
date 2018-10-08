@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import {connect} from 'react-redux'
+import {LOGIN_USER} from './../actions'
+
 const BASE_URL = 'http://localhost:3000/api/v1/users'
 
 class Login extends Component {
@@ -30,6 +33,7 @@ class Login extends Component {
     } else {
       this.setState({ displayError: true })
     }
+    this.props.handleSetName(this.state.input)
   }
 
   render() {
@@ -54,6 +58,21 @@ class Login extends Component {
       </div>
     );
   }
+} // end of Login class
+
+const mapStateToProps = state => {
+  return { name: state.name }
 }
 
-export default Login;
+const mapDispatchToProps = dispatch => {
+  return {
+    handleSetName: name => {
+      dispatch({
+        type: LOGIN_USER,
+        payload: name
+      })
+    }
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Login);
