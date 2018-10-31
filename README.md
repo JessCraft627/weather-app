@@ -5,7 +5,7 @@ Motivation:
 To create a minimalist and modern weather website that displays city forecast data by the current date or five day forecast. 
 
 Screenshots:
-<img width="1440" alt="screen shot 2018-10-31 at 12 13 05 pm" src="https://user-images.githubusercontent.com/35347408/47802390-896d8b00-dd06-11e8-9e7c-11dfe190243d.png">
+
 
 <img width="1440" alt="screen shot 2018-10-31 at 12 13 51 pm" src="https://user-images.githubusercontent.com/35347408/47802410-912d2f80-dd06-11e8-9f6e-dd0ca0bdbe81.png">
 
